@@ -1,3 +1,3 @@
 ## Simple Messaging App
 
-Link: [reactjs-chat-app-github.netlify.app](https://reactjs-chat-app-github.netlify.app/login)
+Link: [reactjs-chat-app-github.netlify.app](https://reactjs-chat-app-github.netlify.app)
