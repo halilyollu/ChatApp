@@ -1,0 +1,587 @@
+// -----Reset Css Start-------
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// -----Reset Css End-------
+
+
+// -----Media Screen Start-----
+
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 850px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@keyframes animeBG{
+    0%{background-position: 0%;}
+    100%{background-position: 100%;}
+}
+
+// -----Media Screen End-----
+
+$dark-color: #1b4965;
+
+// -----Form Page Start-----
+
+.formContainer{
+    background: linear-gradient(45deg, #5fa8d3, #bee9e8, #cae9ff);
+    background-size: 500% 500%;
+    animation: animeBG 3s linear infinite;
+    animation-direction: alternate;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .formWrapper{
+        background-color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 10px 0px 10px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        width: 50%;
+        @include tablet{
+            width: 70%;
+        }
+        @include mobile{
+            width: 80%;
+        }
+
+        img{
+            width: 3rem;
+            @include tablet{
+                width: 4rem;
+            }
+            @include mobile{
+                width: 4.5rem;
+            }
+        }
+
+        .logo{
+            color: #5fa8d3;
+            font-weight: bold;
+            font-size: 1.5rem;
+            @include tablet{
+                font-size: 2rem;
+            }
+            @include mobile{
+                display: none;
+            }
+        }
+
+        .title{
+            color: #5fa8d3;
+            font-size: 0.75rem;
+            @include tablet{
+                font-size: 1rem;
+            }
+            @include mobile{
+                font-size: 0.75rem;
+            }
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 75%;
+            @include tablet{
+                width: 75%;
+            }
+            @include mobile{
+                width: 100%;
+            }
+
+            input{
+                padding: 0.5rem;
+                border: none;
+                border-bottom: solid 1px #cae9ff;
+            &::placeholder{
+                color: #62b6cb;
+            }
+            }
+
+            button{
+                background-color: #5fa8d3;
+                color: white;
+                padding: 0.5rem;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                border-radius: 0px 10px 0px 10px;
+            }
+
+            label{
+                display: flex;
+                align-items: center;
+                color: #62b6cb;
+                gap: 0.5rem;
+                font-size: 0.5rem;
+                cursor: pointer;
+                @include tablet{
+                    font-size: 0.85rem;
+                }
+                @include mobile{
+                    font-size: 0.65rem;
+                }
+
+                img{
+                    width: 1.5rem;
+                    @include tablet{
+                        width: 2rem;
+                    }
+                    @include mobile{
+                        width: 1.3rem;
+                    }
+                }
+            }
+        }
+        p{
+            color: #5fa8d3;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            @include tablet{
+                font-size: 1rem;
+            }
+            @include mobile{
+                font-size: 0.60rem;
+            }
+        }
+    }
+}
+// -----Form Page End-----
+
+// -----Home Page Start-----
+.home{
+    background: linear-gradient(45deg, #5fa8d3, #bee9e8, #cae9ff);
+    background-size: 500% 500%;
+    animation: animeBG 3s linear infinite;
+    animation-direction: alternate;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+        border: 1px solid white;
+        border-radius: 10px 0px 10px 0px;
+        width: 75%;
+        height: 85%;
+        display: flex;
+        overflow: hidden;
+        @include tablet{
+            width: 90%;
+        }
+        @include mobile{
+            width: 100%;
+            height: 100%;
+            border-radius: 0px;
+        }
+
+        .sidebar{
+            flex: 1;
+            background-color: #1b4965;
+            position: relative;
+            @include mobile{
+                flex: none;
+                width: 40%;
+            }
+
+            .navbar{
+                display: flex;
+                align-items: center;
+                background-color: #003554;
+                height: 8%;
+                padding: 0.5rem;
+                justify-content: space-between;
+                color: #fdfffc;
+
+                .logo{
+                    font-weight: bold;
+                    @include tablet{
+                        display: none;
+                    }
+                }
+
+                .user{
+                    display: flex;
+                    gap: 0.5rem;
+                    @include tablet{
+                        align-items: center;
+                    }
+
+                    img{
+                        background-color: #fdfffc;
+                        height: 1rem;
+                        width: 1rem;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        @include tablet{
+                            height: 3rem;
+                            width: 3rem;
+                        }
+                        @include mobile{
+                            height: 2rem;
+                            width: 2rem;
+                        }
+                    }
+
+                    span{
+                        @include tablet{
+                            font-size: 1.5rem;
+                        }
+                        @include mobile{
+                            font-size: 1rem;
+                        }
+                    }
+
+                    button{
+                        background-color: #5fa8d3;
+                        color: #fdfffc;
+                        font-size: 0.5rem;
+                        border: none;
+                        cursor: pointer;
+                        @include tablet{
+                            position: absolute;
+                            bottom: 0.5rem;
+                            font-size: 1rem;
+                            padding: 0.3rem 0.5rem;
+                        }
+                        @include mobile{
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+
+            .search{
+                border-bottom: 1px solid gray;
+
+                .searchForm{
+                    padding: 0.5rem;
+
+                    input{
+                        background: transparent;
+                        border: none;
+                        color: white;
+                        outline: none;
+
+                        &::placeholder{
+                            color: lightgray;
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+
+            .userChat{
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: white;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: #003554;
+                }
+
+                img{
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    @include tablet{
+                        height: 3rem;
+                        width: 3rem;
+                    }
+                    @include mobile{
+                        height: 2rem;
+                        width: 2rem;
+                    }
+                }
+
+                .userChatInfo{
+                    
+                    span{
+                        font-size: 1rem;
+                        font-weight: 500;
+                        @include tablet{
+                            font-size: 1.3rem;
+                        }
+                        @include mobile{
+                            font-size: 0.8rem;
+                        }
+                    }
+
+                    p{
+                        font-size: 0.7rem;
+                        color: lightgrey;
+                        @include tablet{
+                            font-size: 1rem;
+                        }
+                        @include mobile{
+                            font-size: 0.6rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .chat{
+            flex: 2;
+
+            .chatInfo{
+                height: 8%;
+                background-color: #62b6cb;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: lightcyan;
+                padding: 0.5rem;
+
+                span{
+                    @include tablet{
+                        font-size: 1.5rem;
+                    }
+                    @include mobile{
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .chatIcons{
+                display: flex;
+                gap: 0.5rem;
+
+                img{
+                    cursor: pointer;
+                    height: 1rem;
+                    @include tablet{
+                        height: 1.5rem;
+                    }
+                    @include mobile{
+                        height: 1rem;
+                    }
+                }
+            }
+
+            .messages{
+                background-color: #bee9e8;
+                padding: 0.5rem;
+                height: calc(100% - 135px);
+                overflow: scroll;
+                
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                @include tablet{
+                    height: calc(100% - 180px);
+                }
+
+                @include mobile{
+                    height: calc(100% - 160px);
+                }
+
+                .message{
+                    display: flex;
+                    gap: 1rem;
+                    margin-bottom: 1.5rem;
+
+                    .messageInfo{
+                        display: flex;
+                        flex-direction: column;
+                        color: gray;
+                        font-weight: 300;
+                        @include tablet{
+                            font-size: 1rem;
+                        }
+                        @include mobile{
+                            font-size: 0.8rem;
+                        }
+
+                        img{
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            @include tablet{
+                                width: 3rem;
+                                height: 3rem;
+                            }
+                            @include mobile{
+                                width: 2rem;
+                                height: 2rem;
+                            }
+                        }
+                    }
+
+                    .messageContent{
+                        max-width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5rem;
+
+                        p{
+                            background-color: white;
+                            padding: 0.3rem 0.5rem;
+                            border-radius: 0px 10px 10px 10px;
+                            max-width: max-content;
+                            @include tablet{
+                                font-size: 1.5rem;
+                            }
+                            @include mobile{
+                                font-size: 1rem;
+                            }
+                        }
+
+                        img{
+                            width: 50%;
+
+                        }
+                    }
+
+                    &.owner{
+                        flex-direction: row-reverse;
+
+                        .messageContent{
+                            align-items: flex-end;
+
+                            p{
+                                background-color: #5fa8d3;
+                                color: white;
+                                border-radius: 10px 0px 10px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .input{
+                height: 6%;
+                background-color: white;
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                input{
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    color: #003554;
+                    font-size: 0.9rem;
+
+                    &::placeholder{
+                        color: lightgray;
+                    }
+
+                    @include tablet{
+                        font-size: 1.2rem;
+                    }
+
+                    @include mobile{
+                        font-size: 0.8rem;
+                    }
+                }
+
+                .send{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+
+                    img{
+                        height: 1.1rem;
+                        cursor: pointer;
+
+                        @include tablet{
+                            height: 2rem;
+                        }
+                        @include mobile{
+                            height: 1.2rem;
+                        }
+                    }
+
+                    button{
+                        border: none;
+                        padding: 0.3rem 0.5rem;
+                        color: white;
+                        background-color: #1b4965;
+
+                        @include tablet{
+                            font-size: 1.2rem;
+                        }
+
+                        @include mobile{
+                            font-size: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// -----Home Page End-----
